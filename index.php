@@ -47,9 +47,9 @@
 			<?php
 			require_once './classes/Kalkulator.php';
 
-			$liczba1 = $_POST['liczba1'];
-			$liczba2 = $_POST['liczba2'];
-			$dzialanie = $_POST['dzialanie'];
+			$liczba1 = isset($_POST['liczba1']) ? $_POST['liczba1']: '';
+			$liczba2 = isset($_POST['liczba2']) ? $_POST['liczba2']: '';
+			$dzialanie = isset($_POST['dzialanie']) ? $_POST['dzialanie']: '';
 			$kalk = new Kalkulator($liczba1, $liczba2, $dzialanie);
 			echo $kalk->oblicz().'</h1>';
 			?>

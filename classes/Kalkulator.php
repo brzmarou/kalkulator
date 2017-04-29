@@ -17,11 +17,11 @@ class Kalkulator {
 
 	if(is_numeric($liczba1POST)== false){
 			$this->errorInputData = true;
-			$this->eid = $errorInputData;
+		//	$this->eid = $errorInputData;
 		} 
 	if(is_numeric($liczba2POST)== false){
 			$this->errorInputData = true;		
-			$this->eid = $errorInputData;
+		//	$this->eid = $errorInputData;
 		} 
 	$this->dzialanie = $dzialaniePOST;
 	}
@@ -44,22 +44,30 @@ class Kalkulator {
 			case '+' :
 				
 				$wynikDzialania =  $this->odpowiedz($this->num1, $this->num2, $this->dzialanie, $this->errorInputData);
-				$wynikDzialania .= $this->num1 + $this->num2;
+				if($this->wskaznik1 && $this->wskaznik2){
+					$wynikDzialania .= $this->num1 + $this->num2;
+				}
 				return $wynikDzialania;
 				break;
 			case '-' :
 				$wynikDzialania =  $this->odpowiedz($this->num1, $this->num2, $this->dzialanie, $this->errorInputData);
-				$wynikDzialania .= $this->num1 - $this->num2;
+				if($this->wskaznik1 && $this->wskaznik2){
+					$wynikDzialania .= $this->num1 - $this->num2;
+				}
 				return $wynikDzialania;
 				break;
 			case '*' :
 				$wynikDzialania =  $this->odpowiedz($this->num1, $this->num2, $this->dzialanie, $this->errorInputData);
-				$wynikDzialania .= $this->num1 * $this->num2;
+				if($this->wskaznik1 && $this->wskaznik2){
+					$wynikDzialania .= $this->num1 * $this->num2;
+				}
 				return $wynikDzialania;
 				break;
 			case '/' :
 				$wynikDzialania =  $this->odpowiedz($this->num1, $this->num2, $this->dzialanie, $this->errorInputData);
-				$wynikDzialania .= $this->num1 / $this->num2;
+				if($this->wskaznik1 && $this->wskaznik2){
+					$wynikDzialania .= $this->num1 / $this->num2;
+				}
 				return $wynikDzialania;
 				break;
 			default :
